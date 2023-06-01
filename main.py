@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas
 
 st.set_page_config(layout="wide")
 
@@ -9,7 +10,7 @@ with col1:
 
 with col2:
     st.title("Ardit Sulce")
-    content = """"
+    content = """
     A frequent criticism of millennials is that they are entitled narcissistic snowflakes 
     who have a profound aversion to adulting. 
     Lazy, delusional, incapable of making a meaningful contribution to society, 
@@ -17,8 +18,20 @@ with col2:
     """
     st.info(content)
 
-content2 = """"
+content2 = """
 While this generation is not without its flaws, such a negative take on today’s twenty-somethings could
  present certain difficulties when confronted with the real state of affairs. 
 """
 st.write(content2)
+
+col3, col4 = st.columns(2)
+
+df = pandas.read_csv("data.csv", sep=";")
+
+with col3:
+    for index, row in df[:10].iterrows():
+        st.header(row["title"])
+
+with col4:
+    for index, row in df[10:].iterrows():
+        st.header(row["title"])
