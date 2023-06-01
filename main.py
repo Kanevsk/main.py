@@ -16,3 +16,9 @@ with col2:
     notorious for their self-centered approach to life – these are the alleged signature traits of millennials. 
     """
     st.info(content)
+
+content2 = """"
+While this generation is not without its flaws, such a negative take on today’s twenty-somethings could
+ present certain difficulties when confronted with the real state of affairs. 
+"""
+st.write(content2)
